@@ -30,7 +30,7 @@ class Paper:
     r"""
     Load the paper from doi.org and display as text.
     """
-    text = get_data(self.doi())
+    text = get_data(doi_url(self.doi()))
     return text
 
   def abstract(self):
