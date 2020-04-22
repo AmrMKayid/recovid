@@ -1,4 +1,6 @@
 import pandas as pd
+import ipywidgets as widgets
+from IPython.display import HTML, display, clear_output
 
 from ..utils import *
 
@@ -61,7 +63,7 @@ class ResearchPapers:
   def __init__(self, metadata: pd.DataFrame):
     self.metadata = metadata
 
-  def __getitem__(self, item):
+  def __getitem__(self, item: int = 0):
     return Paper(self.metadata.iloc[item])
 
   def __len__(self):

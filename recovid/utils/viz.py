@@ -1,3 +1,11 @@
+import pandas as pd
+import plotly.express as px
+
+from collections import Counter
+from nltk.corpus import stopwords
+from matplotlib import pyplot as plt
+
+
 def most_common_words_from_title(
     df: pd.DataFrame,
     column: str = "title",
