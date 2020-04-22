@@ -23,7 +23,3 @@ from nltk.stem import WordNetLemmatizer
 from sklearn.metrics.pairwise import cosine_similarity
 from IPython.display import HTML, display, clear_output
 from requests.exceptions import HTTPError, ConnectionError
-
-nltk.download("punkt")
-nltk.download("stopwords")
-nltk.download('wordnet')
