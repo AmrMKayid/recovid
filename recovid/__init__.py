@@ -1,5 +1,3 @@
-__all__ = []
-
 import re
 import os
 import json
