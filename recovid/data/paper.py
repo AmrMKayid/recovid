@@ -1,6 +1,6 @@
 import pandas as pd
 
-from .utils import *
+from ..utils import *
 
 
 class Paper:
