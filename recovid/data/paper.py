@@ -11,15 +11,27 @@ class Paper:
       self,
       item: pd.DataFrame,
   ):
+    """[summary]
+
+    Arguments:
+        item {pd.DataFrame} -- [description]
+    """
     self.paper = item.to_frame().fillna('')
     self.paper.columns = ['Value']
 
   def doi(self):
+    """check the paper doi
+
+    Returns:
+        [type] -- [description]
+    """
     return self.paper.loc['doi'].values[0]
 
   def html(self):
-    r"""
-    Load the paper from doi.org and display as HTML.
+    r"""Load the paper from doi.org and display as HTML.
+
+    Returns:
+        [widget] -- return the paper as html widget
     """
     if self.doi():
       url = doi_url(self.doi())
@@ -29,6 +41,11 @@ class Paper:
   def text(self):
     r"""
     Load the paper from doi.org and display as text.
+    """
+    """Load the paper from doi.org and display as text.
+
+    Returns:
+        [str] -- paper page as text
     """
     text = get_data(doi_url(self.doi()))
     return text
@@ -45,6 +62,11 @@ class Paper:
   ):
     r"""
     Get a list of authors
+    """
+    """Get a list of authors
+
+    Returns:
+        [list] -- [list of authors]
     """
     authors = self.paper.loc['authors'].values[0]
     if not authors:

@@ -31,12 +31,29 @@ def lemmatize(
     word_list: list = [],
     lemmatizer: WordNetLemmatizer = WordNetLemmatizer(),
 ):
-  # Init the Wordnet Lemmatizer
+  r"""lemmatizing tokens
+
+  Keyword Arguments:
+      word_list {list} -- words as list (default: {[]})
+      lemmatizer {WordNetLemmatizer} -- [description] (default: {WordNetLemmatizer()})
+
+  Returns:
+      [type] -- [description]
+  """
   lemmatized_output = ' '.join([lemmatizer.lemmatize(w) for w in word_list])
   return lemmatized_output
 
 
 def preprocess(text: str = ''):
+  """preprocessing text
+
+
+  Keyword Arguments:
+      text {str} -- text to be processed (default: {''})
+
+  Returns:
+      [str] -- cleaned text
+  """
   text = clean(text)
   tokens = tokenize(text)
   lemmatizer = WordNetLemmatizer()
