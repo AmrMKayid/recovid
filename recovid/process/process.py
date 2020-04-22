@@ -36,7 +36,7 @@ def lemmatize(word_list: list = [],
 
 def preprocess(text: str = ''):
   text = clean(text)
-  tokens = tokenize(t)
+  tokens = tokenize(text)
   lemmatizer = WordNetLemmatizer()
   tokens = lemmatize(tokens, lemmatizer)
 
