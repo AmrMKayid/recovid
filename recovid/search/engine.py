@@ -46,7 +46,7 @@ class WordTokenIndex:
     return SearchResults(results, self.columns + ['paper'])
 
 
-class RankBM25Index(WordTokenIndex):
+class SearchEngine(WordTokenIndex):
 
   def __init__(self,
                corpus: pd.DataFrame,
@@ -67,7 +67,7 @@ class RankBM25Index(WordTokenIndex):
     return SearchResults(results.reset_index(), self.columns + ['Score'])
 
 
-def search_papers(search_engine: RankBM25Index,
+def search_papers(search_engine: SearchEngine,
                   search_terms: str = 'virus',
                   results_num: int = 200,
                   display_num: int = 10):
