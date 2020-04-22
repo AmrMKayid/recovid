@@ -1,5 +1,5 @@
 from recovid import *
-from recovid.utils import *
+from recovid.utils import doi_url, get_data
 
 
 class Paper:
@@ -7,7 +7,10 @@ class Paper:
   A single research paper
   """
 
-  def __init__(self, item: pd.DataFrame):
+  def __init__(
+      self,
+      item: pd.DataFrame,
+  ):
     self.paper = item.to_frame().fillna('')
     self.paper.columns = ['Value']
 
@@ -16,7 +19,7 @@ class Paper:
 
   def html(self):
     r"""
-    Load the paper from doi.org and display as HTML. Requires internet to be ON
+    Load the paper from doi.org and display as HTML.
     """
     if self.doi():
       url = doi_url(self.doi())
@@ -25,7 +28,7 @@ class Paper:
 
   def text(self):
     r"""
-    Load the paper from doi.org and display as text. Requires Internet to be ON
+    Load the paper from doi.org and display as text.
     """
     text = get_data(self.doi())
     return text
@@ -36,7 +39,10 @@ class Paper:
   def title(self):
     return self.paper.loc['title'].values[0]
 
-  def authors(self, split: bool = False):
+  def authors(
+      self,
+      split: bool = False,
+  ):
     r"""
     Get a list of authors
     """
@@ -57,19 +63,31 @@ class Paper:
 
 class ResearchPapers:
 
-  def __init__(self, metadata: pd.DataFrame):
+  def __init__(
+      self,
+      metadata: pd.DataFrame,
+  ):
     self.metadata = metadata
 
-  def __getitem__(self, item: int = 0):
+  def __getitem__(
+      self,
+      item: int = 0,
+  ):
     return Paper(self.metadata.iloc[item])
 
   def __len__(self):
     return len(self.metadata)
 
-  def head(self, n: int = 3):
+  def head(
+      self,
+      n: int = 3,
+  ):
     return ResearchPapers(self.metadata.head(n).copy().reset_index(drop=True))
 
-  def tail(self, n: int = 3):
+  def tail(
+      self,
+      n: int = 3,
+  ):
     return ResearchPapers(self.metadata.tail(n).copy().reset_index(drop=True))
 
   def abstracts(self):

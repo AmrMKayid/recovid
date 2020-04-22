@@ -27,8 +27,10 @@ def tokenize(text: str = ''):
       ]))
 
 
-def lemmatize(word_list: list = [],
-              lemmatizer: WordNetLemmatizer = WordNetLemmatizer()):
+def lemmatize(
+    word_list: list = [],
+    lemmatizer: WordNetLemmatizer = WordNetLemmatizer(),
+):
   # Init the Wordnet Lemmatizer
   lemmatized_output = ' '.join([lemmatizer.lemmatize(w) for w in word_list])
   return lemmatized_output
