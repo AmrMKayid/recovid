@@ -1,1 +1,1 @@
-<h1 align=center> recovid19 </h1>
+<h1 align=center> Researching COVID-19 Open Research Dataset Challenge (CORD-19) </h1>
