@@ -1,5 +1,4 @@
-import requests
-from requests.exceptions import HTTPError, ConnectionError
+from recovid import *
 
 
 def get(url: str = '', timeout: int = 10):

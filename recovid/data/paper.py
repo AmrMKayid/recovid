@@ -1,8 +1,5 @@
-import pandas as pd
-import ipywidgets as widgets
-from IPython.display import HTML, display, clear_output
-
-from ..utils import *
+from recovid import *
+from recovid.utils import *
 
 
 class Paper:

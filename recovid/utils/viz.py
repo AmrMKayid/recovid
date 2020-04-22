@@ -1,9 +1,4 @@
-import pandas as pd
-import plotly.express as px
-
-from collections import Counter
-from nltk.corpus import stopwords
-from matplotlib import pyplot as plt
+from recovid import *
 
 
 def most_common_words_from_title(
