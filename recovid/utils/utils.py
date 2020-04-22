@@ -1,7 +1,7 @@
 from recovid import *
 
 
-def get(url: str = '', timeout: int = 10):
+def get_data(url: str = '', timeout: int = 10):
   try:
     r = requests.get(url, timeout=timeout)
     return r.text

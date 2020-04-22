@@ -20,14 +20,14 @@ class Paper:
     """
     if self.doi():
       url = doi_url(self.doi())
-      text = get(url)
+      text = get_data(url)
       return widgets.HTML(text)
 
   def text(self):
     r"""
     Load the paper from doi.org and display as text. Requires Internet to be ON
     """
-    text = get(self.doi())
+    text = get_data(self.doi())
     return text
 
   def abstract(self):
