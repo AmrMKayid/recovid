@@ -1,8 +1,3 @@
-__all__ = ['data', 'utils']
-
-from .data import *
-from .utils import *
-
 import re
 import os
 import json
@@ -27,3 +22,8 @@ from nltk.stem import WordNetLemmatizer
 from sklearn.metrics.pairwise import cosine_similarity
 from IPython.display import HTML, display, clear_output
 from requests.exceptions import HTTPError, ConnectionError
+
+__all__ = ['data', 'utils']
+
+from .data import *
+from .utils import *
